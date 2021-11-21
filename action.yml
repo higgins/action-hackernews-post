@@ -17,8 +17,3 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.POST_TITLE }}
-    - ${{ inputs.POST_URL }}
-    - ${{ inputs.HN_USERNAME }}
-    - ${{ inputs.HN_PASSWORD }}

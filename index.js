@@ -1,22 +1,24 @@
 //const puppeteer = require('puppeteer');
 
+// NOTE: github will prefix with `INPUT_`
+// https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#inputs
 const {
-  HN_USERNAME,
-  HN_PASSWORD,
-  POST_TITLE,
-  POST_URL,
+  INPUT_HN_USERNAME,
+  INPUT_HN_PASSWORD,
+  INPUT_POST_TITLE,
+  INPUT_POST_URL,
 } = process.env;
 
 const login = async (page) => {
-  await page.type('input[name=acct][type=text]', HN_USERNAME, { delay: userTypeDelay });
-  await page.type('input[type=password]', HN_PASSWORD, { delay: userTypeDelay });
+  await page.type('input[name=acct][type=text]', INPUT_HN_USERNAME, { delay: userTypeDelay });
+  await page.type('input[type=password]', INPUT_HN_PASSWORD, { delay: userTypeDelay });
   await page.click('input[type=submit][value=login]');
 }
 
 const post = async (page) => {
   await page.goto('https://news.ycombinator.com/submit');
-  await page.type('input[name=title][type=text]', POST_TITLE, { delay: userTypeDelay });
-  await page.type('input[name=url][type=url]', POST_URL, { delay: userTypeDelay });
+  await page.type('input[name=title][type=text]', INPUT_POST_TITLE, { delay: userTypeDelay });
+  await page.type('input[name=url][type=url]', INPUT_POST_URL, { delay: userTypeDelay });
   await page.click('input[type=submit][value=submit]');
 }
 
@@ -24,10 +26,10 @@ try {
   (async () => {
     console.log('----------------------------');
     console.log({
-      HN_USERNAME,
-      HN_PASSWORD,
-      POST_TITLE,
-      POST_URL,
+      INPUT_HN_USERNAME,
+      INPUT_HN_PASSWORD,
+      INPUT_POST_TITLE,
+      INPUT_POST_URL,
     });
 
     /* const browser = await puppeteer.launch();
@@ -45,7 +47,7 @@ try {
      * await page.waitForTimeout(userInputDelay);
      * await browser.close();
 
-     * console.log(`Successfully submitted ${POST_TITLE}, ${POST_URL}`);
+     * console.log(`Successfully submitted ${INPUT_POST_TITLE}, ${INPUT_POST_URL}`);
      * process.exit(0); */
   })();
 } catch(e) {
