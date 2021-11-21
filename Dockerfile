@@ -1,9 +1,6 @@
 # Container image that runs your code
 FROM alpine:3.10
 
-
-RUN apk add --update nodejs npm
-
 # NOTE: install puppeteer Docker deps
 # https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#running-on-alpine
 # Installs latest Chromium (92) package.
@@ -15,7 +12,7 @@ RUN apk add --no-cache \
       ca-certificates \
       ttf-freefont \
       nodejs \
-      yarn
+      npm
 
 # Tell Puppeteer to skip installing Chrome. We'll be using the installed package.
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
@@ -32,8 +29,6 @@ USER pptruser
 
 WORKDIR /app
 
-COPY package.json package.json
-
-RUN npm install
+RUN npm install puppeteer
 
 CMD ["node", "index.js"]
