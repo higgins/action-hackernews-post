@@ -2,17 +2,23 @@
 name: 'Post to HN'
 description: 'Submit URL to news.ycombinator.com'
 inputs:
-  INPUT_POST_TITLE:
+  POST_TITLE:
     description: 'Title of the post to be seen on news.ycombinator.com'
     required: true
-  INPUT_POST_URL:
+  POST_URL:
     description: 'URL of the post'
     required: true
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  HN_USERNAME:
+    description: 'Hackernews account username. Store this in secrets!'
+    required: true
+  HN_PASSWORD:
+    description: 'Hackernews account username. Store this in secrets!'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ inputs.POST_TITLE }}
+    - ${{ inputs.POST_URL }}
+    - ${{ inputs.HN_USERNAME }}
+    - ${{ inputs.HN_PASSWORD }}
