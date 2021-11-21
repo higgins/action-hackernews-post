@@ -1,4 +1,4 @@
-//const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer');
 
 // NOTE: github will prefix with `INPUT_`
 // https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#inputs
@@ -30,6 +30,7 @@ try {
       INPUT_HN_PASSWORD,
       INPUT_POST_TITLE,
       INPUT_POST_URL,
+      puppeteer: Object.keys(puppeteer)
     });
 
     /* const browser = await puppeteer.launch();
