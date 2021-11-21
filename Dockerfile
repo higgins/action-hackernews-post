@@ -1,7 +1,6 @@
 # Container image that runs your code
 FROM alpine:3.10
 
-COPY package.json package.json
 
 RUN apk add --update nodejs npm
 
@@ -32,6 +31,8 @@ RUN addgroup -S pptruser && adduser -S -g pptruser pptruser \
 USER pptruser
 
 WORKDIR /app
+
+COPY package.json package.json
 
 RUN npm install
 
