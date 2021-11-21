@@ -1,0 +1,22 @@
+{
+  "name": "action-hackernews-post",
+  "version": "0.1.0",
+  "description": "A Github action to post to news.ycombinator.com based on a new file in a repo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/higgins/action-hackernews-post.git"
+  },
+  "author": "Justin Higgins <npm set init.author.url http://yourblog.com> (https://startingcondition.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/higgins/action-hackernews-post/issues"
+  },
+  "homepage": "https://github.com/higgins/action-hackernews-post#readme",
+  "dependencies": {
+    "puppeteer": "^11.0.0"
+  }
+}
