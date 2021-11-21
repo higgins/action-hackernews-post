@@ -24,7 +24,7 @@ const post = async (page) => {
 
 try {
   (async () => {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({ args: ['--no-sandbox','--disable-dev-shm-usage'] });
     const page = await browser.newPage();
     await page.goto('https://news.ycombinator.com/login');
 
