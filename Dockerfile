@@ -30,5 +30,7 @@ USER pptruser
 WORKDIR /app
 
 RUN npm install puppeteer
+RUN ls -al
+RUN node -e "p = require('puppeteer'); console.log(p)"
 
 CMD ["node", "index.js"]
