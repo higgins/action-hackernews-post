@@ -28,6 +28,7 @@ RUN addgroup -S pptruser && adduser -S -g pptruser pptruser \
 USER pptruser
 
 WORKDIR /app
+COPY index.js index.js
 
 RUN npm install puppeteer
 RUN node index.js
