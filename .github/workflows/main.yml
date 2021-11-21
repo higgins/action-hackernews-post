@@ -11,9 +11,9 @@ jobs:
         uses: actions/checkout@v2
       - name: Hello world action step
         uses: ./ # Uses an action in the root directory
-        id: hello
+        id: hn_post
         with:
-          who-to-greet: 'Justin'
-      # Use the output from the `hello` step
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
+          HN_USERNAME: ${{ secrets.HN_USERNAME }}
+          HN_PASSWORD: ${{ secrets.HN_PASSWORD }}
+          POST_TITLE: "Test from docker"
+          POST_URL: https://juniortosenior.io/68

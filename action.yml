@@ -1,11 +1,13 @@
 # action.yml
-name: 'Hello World -- from GH Actions in Docker'
-description: 'Greet someone and record the time'
+name: 'Post to HN'
+description: 'Submit URL to news.ycombinator.com'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  INPUT_POST_TITLE:
+    description: 'Title of the post to be seen on news.ycombinator.com'
     required: true
-    default: 'World'
+  INPUT_POST_URL:
+    description: 'URL of the post'
+    required: true
 outputs:
   time: # id of output
     description: 'The time we greeted you'
