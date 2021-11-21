@@ -31,6 +31,8 @@ RUN addgroup -S pptruser && adduser -S -g pptruser pptruser \
 # Run everything after as non-privileged user.
 USER pptruser
 
+WORKDIR /app
+
 RUN npm install
 
 CMD ["node", "index.js"]
