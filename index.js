@@ -1,3 +1,5 @@
+console.log('//////////////attempt')
+console.error('//////////////attempt, err')
 const puppeteer = require('puppeteer');
 
 // NOTE: github will prefix with `INPUT_`
@@ -30,7 +32,7 @@ try {
       INPUT_HN_PASSWORD,
       INPUT_POST_TITLE,
       INPUT_POST_URL,
-      puppeteer: Object.keys(puppeteer)
+      puppeteer: !!puppeteer
     });
 
     /* const browser = await puppeteer.launch();
