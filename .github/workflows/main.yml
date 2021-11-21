@@ -15,5 +15,5 @@ jobs:
         with:
           HN_USERNAME: ${{ secrets.HN_USERNAME }}
           HN_PASSWORD: ${{ secrets.HN_PASSWORD }}
-          POST_TITLE: "Test from docker"
-          POST_URL: https://juniortosenior.io/68
+          POST_TITLE: "Test 3"
+          POST_URL: https://encapsulate.me/helpful.html

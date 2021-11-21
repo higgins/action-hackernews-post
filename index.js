@@ -1,5 +1,3 @@
-console.log('//////////////attempt')
-console.error('//////////////attempt, err')
 const puppeteer = require('puppeteer');
 
 // NOTE: github will prefix with `INPUT_`
@@ -26,32 +24,23 @@ const post = async (page) => {
 
 try {
   (async () => {
-    console.log('----------------------------');
-    console.log({
-      INPUT_HN_USERNAME,
-      INPUT_HN_PASSWORD,
-      INPUT_POST_TITLE,
-      INPUT_POST_URL,
-      puppeteer: !!puppeteer
-    });
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+    await page.goto('https://news.ycombinator.com/login');
 
-    /* const browser = await puppeteer.launch();
-     * const page = await browser.newPage();
-     * await page.goto('https://news.ycombinator.com/login');
+    const userTypeDelay = Math.floor(100 + (Math.random() * 50));
+    const userInputDelay = userTypeDelay * 10;
+    await page.waitForTimeout(userInputDelay);
 
-     * const userTypeDelay = Math.floor(100 + (Math.random() * 50));
-     * const userInputDelay = userTypeDelay * 10;
-     * await page.waitForTimeout(userInputDelay);
+    await login(page);
+    await page.waitForTimeout(userInputDelay);
 
-     * await login(page);
-     * await page.waitForTimeout(userInputDelay);
+    await post(page);
+    await page.waitForTimeout(userInputDelay);
+    await browser.close();
 
-     * await post(page);
-     * await page.waitForTimeout(userInputDelay);
-     * await browser.close();
-
-     * console.log(`Successfully submitted ${INPUT_POST_TITLE}, ${INPUT_POST_URL}`);
-     * process.exit(0); */
+    console.log(`Successfully submitted ${INPUT_POST_TITLE}, ${INPUT_POST_URL}`);
+    process.exit(0);
   })();
 } catch(e) {
   console.error(e);
