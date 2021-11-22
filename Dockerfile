@@ -19,6 +19,6 @@ ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
     PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
 
 RUN npm install puppeteer
-COPY index.js index.js
+COPY index.js /index.js
 
 CMD ["node", "index.js"]
