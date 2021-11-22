@@ -30,9 +30,11 @@ The URL to post to HN.
 
 ## Example usage
 
+```
 uses: higgins/action-hackernews-post@v1.0.0
 with:
   HN_USERNAME: ${{ secrets.HN_USERNAME }}
   HN_PASSWORD: ${{ secrets.HN_PASSWORD }}
   POST_TITLE: "An clock where every second is user submitted content"
   POST_URL: https://24HourHomepage.com
+```
