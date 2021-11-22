@@ -1,7 +1,9 @@
 # action.yml
 name: 'Post to HN'
 description: 'Submit URL to news.ycombinator.com'
-icon: 'book-open'
+branding:
+  icon: 'book-open'
+  color: 'orange'
 inputs:
   POST_TITLE:
     description: 'Title of the post to be seen on news.ycombinator.com'
