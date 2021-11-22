@@ -15,7 +15,7 @@ confirm your integration adheres
 Do not store your login credentials directly in your workflow
 file. Store them in an encrypted, secure manner.
 
-EG: Github secrets: Settings > Secrets > Actions
+**EG:** Github secrets: Settings > Secrets > Actions
 
 ## `HN_USERNAME`
 
