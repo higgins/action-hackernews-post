@@ -21,4 +21,4 @@ ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
 RUN npm install puppeteer
 COPY index.js /index.js
 
-CMD ["node", "index.js"]
+CMD ["node", "/index.js"]
