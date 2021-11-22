@@ -1,5 +1,5 @@
 # action-hackernews-post
-A Github action to post to news.ycombinator.com
+A Github action to post to [news.ycombinator.com](https://news.ycombinator.com)
 
 ## Guidelines
 As a reminder, read through [HN's submission
@@ -7,6 +7,11 @@ guidelines](https://news.ycombinator.com/newsguidelines.html) to
 confirm your integration adheres
 
 ## Inputs
+
+Do not store your login credentials directly in your workflow
+file. Store them in an encrypted, secure manner.
+
+EG: Github secrets: Settings > Secrets > Actions
 
 ## `HN_USERNAME`
 
