@@ -1,6 +1,6 @@
 # action.yml
 name: 'Post to Hackernews'
-description: 'Submit URL to news.ycombinator.com'
+description: 'Submit URL to https://news.ycombinator.com'
 branding:
   icon: 'book-open'
   color: 'orange'
