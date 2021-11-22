@@ -1,5 +1,9 @@
 # action-hackernews-post
+**Unofficial**
 A Github action to post to [news.ycombinator.com](https://news.ycombinator.com)
+
+Using a headless browser (via puppeteer) and your hackernews login
+credentials, submit an article with title & url under your account.
 
 ## Guidelines
 As a reminder, read through [HN's submission
