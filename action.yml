@@ -1,5 +1,5 @@
 # action.yml
-name: 'Post to HN'
+name: 'Post to Hackernews'
 description: 'Submit URL to news.ycombinator.com'
 inputs:
   POST_TITLE:

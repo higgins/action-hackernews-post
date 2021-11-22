@@ -37,10 +37,10 @@ The title as it will be displayed on news.ycombinator.com.
 
 The URL to post to HN.
 
-## Example usage
+## Example usage, static file
 
 ```
-uses: higgins/action-hackernews-post@v1.0.0
+uses: higgins/action-hackernews-post@v1.0.1
 with:
   HN_USERNAME: ${{ secrets.HN_USERNAME }}
   HN_PASSWORD: ${{ secrets.HN_PASSWORD }}
