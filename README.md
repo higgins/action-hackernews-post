@@ -2,7 +2,7 @@
 **Unofficial**
 A Github action to post to [news.ycombinator.com](https://news.ycombinator.com)
 
-Uses @lukakerr's [hkn](https://github.com/lukakerr/hkn) go module to
+Uses [@lukakerr](https://github.com/lukakerr)'s [hkn](https://github.com/lukakerr/hkn) go module to
 login and post to HN
 
 ## Guidelines
